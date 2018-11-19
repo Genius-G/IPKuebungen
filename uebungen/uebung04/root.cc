@@ -72,19 +72,26 @@ void test_root(double q, int n, int steps){
 	 * The third argument steps -- is the number of steps for this approximation.
 	 * */
 	 
-	 
+	std::cout << "The Basis q is " << q << std::endl;
+	std::cout << "The Exponent n is " << n << std::endl;
+	std::cout << "The Approximation â is " << root_iterative(q, n, steps) << std::endl;
+	std::cout << "The Inverse â^n is " << power::iterative(root_iterative(q, n, steps), n) << std::endl;
+	std::cout << "The Difference between q - â^n is " << q - power::iterative(root_iterative(q, n, steps), n) << std::endl;
+
 	}
 
 int main(int argc, char** argv){
 	//reading input
-	int q; 
+	double q; 
 	int n;
 	std::cout << "In q^(1/n) ist q = " << std::flush;
 	std::cin >> q;
 	std::cout << "und n = " << std::flush;
 	std::cin >> n;
+	std::cout << std::endl;
 	
 	//output via shell
 	std::cout << "The result of " << q << "^1/" << n << " = ";
-	std::cout << root_iterative(q,n,5) << std::endl << std::endl;
+	std::cout << root_iterative(q,n,100) << std::endl << std::endl;
+	test_root(q, n, 100);
 	}
