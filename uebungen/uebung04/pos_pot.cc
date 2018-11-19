@@ -3,7 +3,7 @@
 using namespace std;
 
 namespace power{
-	 
+	
 	int iterative(int q, int n){
 		/* This funtion returns the result of q^n
 		 * The first argument q -- is the Basis and
@@ -24,7 +24,7 @@ namespace power{
 		else{
 			for(int i = 0; i < n; i++){
 				//calculating q^n iterativly
-				result *= q;
+				result *= q; //result = result * q
 				}
 			}
 		return result;

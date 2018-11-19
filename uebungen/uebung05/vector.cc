@@ -7,6 +7,25 @@ void task_a(std::vector<double> v){
     }
 }
 
+std::pair<double, double> min_max(std::vector<double> v){
+    double min = v[0];
+    double max = v[0];
+
+    //find min
+    for(int i = 0; i < v.size(); i++){
+        if(v[i] < min){
+            min = v[i];
+        }
+    }
+    //find max
+    for(int i = 0; i < v.size(); i++){
+        if(v[i] > max){
+            max = v[i];
+        }
+    }
+    return std::make_pair(min, max);
+}
+
 int main(int argc, char** argv){
     std::vector<double> v1;
     std::vector<double> v2(10);
@@ -18,4 +37,6 @@ int main(int argc, char** argv){
     task_a(v3); //returns the values of v1
 
     //task (b):
+    std::cout << "The minimum and the maximum is ";
+    std::cout << min_max(v3).first << " and " << min_max(v3).second << std::endl;
 }
