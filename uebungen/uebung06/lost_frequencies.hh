@@ -30,4 +30,3 @@ void print_frequencies(const std::map<char, int>& frequencies){
     std::cout << "The total number of Letters is " << sum << std::endl;
 }
 
-

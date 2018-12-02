@@ -1,0 +1,1 @@
+/usr/lib64/ccache/c++     CMakeFiles/task_a.dir/readvector.cxx.o CMakeFiles/task_a.dir/uniform.cxx.o CMakeFiles/task_a.dir/normal.cxx.o  -o task_a 
