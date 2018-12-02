@@ -18,6 +18,7 @@ double mean(const std::vector<double>& v){
     }
 }
 
+
 double median(const std::vector<double>& v){
     std::vector<double> v_copy;
     if (v.size() != 0){
