@@ -2,18 +2,24 @@
 #define POINT_HH
 
 class Point{
-    public:
+   public:
+
+        //Constructor
         Point();
         Point(double _x, double _y);
-        double get_x() const;
-        double get_y() const;
+
+        //methods
+        double x() const;
+        double y() const;
         void set_x(double _x);
         void set_y(double _y);
 
     private:
-        double x;
-        double y;
+
+        //members
+        double _x;
+        double _y;
 
 };
 
-#endif
+#endif //POINT_HH

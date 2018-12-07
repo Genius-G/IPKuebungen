@@ -1,30 +1,30 @@
 #include "point.hh"
 
+//Constructor definition inside the "body"
 Point::Point(){
-    x = 0;
-    y = 0;
-}
-Point::Point(double _x, double _y){
-    x = _x;
-    y = _y;
+    _x = 0;
+    _y = 0;
 }
 
-double Point::get_x() const{
-    return x;
+//Constructor definition by initializer list
+Point::Point(double x, double y)
+    : _x(x)
+    , _y(y)
+{}
+
+//defintion of the methods
+double Point::x() const{
+    return _x;
 }
 
-double Point::get_y() const{
-    return y;
+double Point::y() const{
+    return _y;
 }
 
-void Point::set_x(double _x){
-    x = _x;
+void Point::set_x(double x){
+    _x = x;
 }
 
-void Point::set_y(double _y){
-    y = _y;
-}
-
-int main(){
-    Point Klara(2,3);
+void Point::set_y(double y){
+    _y = y;
 }
