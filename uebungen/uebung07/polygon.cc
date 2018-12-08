@@ -1,11 +1,10 @@
 #include "polygon.hh"
 #include "point.hh"
-#include <iostream>
 #include <cmath>
 const double pi = M_PI;
 
 //Constructor definition by an initializer list
-Polygon::Polygon(const std::vector<Point> &corners)
+Polygon::Polygon(const std::vector<Point>& corners)
     :_corners(corners)
 {}
 
@@ -31,30 +30,29 @@ Polygon regular_polygon(double n){
     for(int i = 0; i < n; i++){
         double _i = i;
         Point i_th_point(std::cos((_i/n) * 2.0*pi), std::sin((_i/n) * 2.0*pi));
-        std::cout << i_th_point.x() << std::endl;
-        std::cout << i_th_point.y() << std::endl;
-        corners.at(i) = i_th_point;
+        corners.push_back(i_th_point);
     }
+    corners.push_back(corners.front());
     Polygon result(corners);
     return result;
 }
 
-
-//main function to test the classes
 int main(){
-    Point test(4,3);
-    std::vector<Point> v = {{test}};
-    Polygon Lilie(v);
-
-    std::cout << "The corners of Polygon Lilie are ";
-    std::cout << Lilie.get_corners().at(0).x() << ", ";
-    std::cout << Lilie.get_corners().at(0).y() << std::endl;
-    std::cout << "The number of corners of Polygon Lilie are ";
-    std::cout << Lilie.corners() << std::endl;
-    std::cout << "The volume of Polygon Lilie is ";
-    std::cout << Lilie.volume() << std::endl;
-
     //testing like the exercise demands
-    std::cout << "The volume of the regular Polygon is ";
-    std::cout << regular_polygon(5).volume() << std::endl;
+
+    //Area of a Triangle
+    std::cout << "The volume of the 3rd regular Polygon is ";
+    std::cout << regular_polygon(3).volume() << std::endl;
+
+    //Area of a ... I forgot (*facepalm)
+    std::cout << "The volume of the 4th regular Polygon is ";
+    std::cout << regular_polygon(4).volume() << std::endl;
+
+    //Area of a Hexagon
+    std::cout << "The volume of the 6th regular Polygon is ";
+    std::cout << regular_polygon(6).volume() << std::endl;
+
+    //Area of a Octagon
+    std::cout << "The volume of the 8th regular Polygon is ";
+    std::cout << regular_polygon(8).volume() << std::endl;
 }
